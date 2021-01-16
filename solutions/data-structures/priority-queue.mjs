@@ -1,7 +1,7 @@
 import { createHeap } from "./heap.mjs";
 
-export const createPriorityQueue = () => {
-  const buffer = createHeap();
+export const createPriorityQueue = (compareFn = (x, y) => x < y) => {
+  const buffer = createHeap(compareFn);
 
   const isEmpty = () => {
     return buffer.isEmpty();
