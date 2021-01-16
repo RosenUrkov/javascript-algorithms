@@ -1,3 +1,4 @@
+import { polynomialHash } from "../algorithms/cryptography/polynomial-hash.mjs";
 import { createDoublyLinkedList } from "./doubly-linked-list.mjs";
 
 export const createHashMap = () => {
@@ -13,14 +14,7 @@ export const createHashMap = () => {
 
   const hash = (key) => {
     const stringKey = JSON.stringify(key);
-
-    return stringKey.split("").reduce((hashAcc, _, index) => {
-      // a simple hashing function:
-      // charCodeAt(index) is the i-th character code of the key, n is the length of the key and
-      // PRIME is just any prime number like 31.
-      const polynomialIdex = 31 ** (stringKey.length - index - 1);
-      return hashAcc + polynomialIdex * stringKey.charCodeAt(index);
-    }, 0);
+    return polynomialHash(stringKey);
   };
 
   const hashToIndex = (hash) => {
