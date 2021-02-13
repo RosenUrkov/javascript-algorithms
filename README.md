@@ -103,8 +103,8 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `A` [Knuth–Morris–Pratt Algorithm](src/algorithms/string/knuth-morris-pratt) (KMP Algorithm) - substring search (pattern matching)
   - :heavy_check_mark: `A` [Z Algorithm](src/algorithms/string/z-algorithm) - substring search (pattern matching)
   - :heavy_check_mark: `A` [Rabin Karp Algorithm](src/algorithms/string/rabin-karp) - substring search
-  - :x: `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
-  - :x: `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
+  - :heavy_check_mark: `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
+  - :heavy_check_mark: `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
 - **Searches**
   - :heavy_check_mark: `B` [Linear Search](src/algorithms/search/linear-search)
   - :heavy_check_mark: `B` [Jump Search](src/algorithms/search/jump-search) (or Block Search) - search in sorted array
