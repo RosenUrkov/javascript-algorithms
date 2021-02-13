@@ -38,22 +38,22 @@ the data.
 
 `B` - Beginner, `A` - Advanced
 
-:heavy_check_mark: `B` [Linked List](src/data-structures/linked-list)
-:heavy_check_mark: `B` [Doubly Linked List](src/data-structures/doubly-linked-list)
-:heavy_check_mark: `B` [Queue](src/data-structures/queue)
-:heavy_check_mark: `B` [Stack](src/data-structures/stack)
-:heavy_check_mark: `B` [Hash Table](src/data-structures/hash-table)
-:heavy_check_mark: `B` [Heap](src/data-structures/heap) - max and min heap versions
-:heavy_check_mark: `B` [Priority Queue](src/data-structures/priority-queue)
-:heavy_check_mark: `A` [Trie](src/data-structures/trie)
-:heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
-:x: `A` [AVL Tree](src/data-structures/tree/avl-tree)
-:x: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
-:x: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
-:x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
-:heavy_check_mark: `A` [Graph](src/data-structures/graph) (both directed and undirected)
-:heavy_check_mark: `A` [Disjoint Set](src/data-structures/disjoint-set)
-:x: `A` [Bloom Filter](src/data-structures/bloom-filter)
+- :heavy_check_mark: `B` [Linked List](src/data-structures/linked-list)
+- :heavy_check_mark: `B` [Doubly Linked List](src/data-structures/doubly-linked-list)
+- :heavy_check_mark: `B` [Queue](src/data-structures/queue)
+- :heavy_check_mark: `B` [Stack](src/data-structures/stack)
+- :heavy_check_mark: `B` [Hash Table](src/data-structures/hash-table)
+- :heavy_check_mark: `B` [Heap](src/data-structures/heap) - max and min heap versions
+- :heavy_check_mark: `B` [Priority Queue](src/data-structures/priority-queue)
+- :heavy_check_mark: `A` [Trie](src/data-structures/trie)
+- :heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
+- :x: `A` [AVL Tree](src/data-structures/tree/avl-tree)
+- :x: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
+- :x: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
+- :x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
+- :heavy_check_mark: `A` [Graph](src/data-structures/graph) (both directed and undirected)
+- :heavy_check_mark: `A` [Disjoint Set](src/data-structures/disjoint-set)
+- :x: `A` [Bloom Filter](src/data-structures/bloom-filter)
 
 ## Algorithms
 
@@ -65,102 +65,102 @@ a set of rules that precisely define a sequence of operations.
 ### Algorithms by Topic
 
 - **Math**
-  :heavy_check_mark: `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
-  :heavy_check_mark: `B` [Factorial](src/algorithms/math/factorial)
-  :heavy_check_mark: `B` [Fibonacci Number](src/algorithms/math/fibonacci) - classic and closed-form versions
-  :heavy_check_mark: `B` [Prime Factors](src/algorithms/math/prime-factors) - finding prime factors and counting them using Hardy-Ramanujan's theorem
-  :heavy_check_mark: `B` [Primality Test](src/algorithms/math/primality-test) (trial division method)
-  :heavy_check_mark: `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
-  :heavy_check_mark: `B` [Least Common Multiple](src/algorithms/math/least-common-multiple) (LCM)
-  :heavy_check_mark: `B` [Sieve of Eratosthenes](src/algorithms/math/sieve-of-eratosthenes) - finding all prime numbers up to any given limit
-  :heavy_check_mark: `B` [Is Power of Two](src/algorithms/math/is-power-of-two) - check if the number is power of two (naive and bitwise algorithms)
-  :heavy_check_mark: `B` [Pascal's Triangle](src/algorithms/math/pascal-triangle)
-  :heavy_check_mark: `B` [Complex Number](src/algorithms/math/complex-number) - complex numbers and basic operations with them
-  :heavy_check_mark: `B` [Radian & Degree](src/algorithms/math/radian) - radians to degree and backwards conversion
-  :heavy_check_mark: `B` [Fast Powering](src/algorithms/math/fast-powering)
-  :heavy_check_mark: `B` [Horner's method](src/algorithms/math/horner-method) - polynomial evaluation
-  :heavy_check_mark: `B` [Matrices](src/algorithms/math/matrix) - matrices and basic matrix operations (multiplication, transposition, etc.)
-  :heavy_check_mark: `B` [Euclidean Distance](src/algorithms/math/euclidean-distance) - distance between two points/vectors/matrices
-  :x: `A` [Integer Partition](src/algorithms/math/integer-partition)
-  :x: `A` [Square Root](src/algorithms/math/square-root) - Newton's method
-  :x: `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
-  :x: `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
+  - :heavy_check_mark: `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
+  - :heavy_check_mark: `B` [Factorial](src/algorithms/math/factorial)
+  - :heavy_check_mark: `B` [Fibonacci Number](src/algorithms/math/fibonacci) - classic and closed-form versions
+  - :heavy_check_mark: `B` [Prime Factors](src/algorithms/math/prime-factors) - finding prime factors and counting them using Hardy-Ramanujan's theorem
+  - :heavy_check_mark: `B` [Primality Test](src/algorithms/math/primality-test) (trial division method)
+  - :heavy_check_mark: `B` [Euclidean Algorithm](src/algorithms/math/euclidean-algorithm) - calculate the Greatest Common Divisor (GCD)
+  - :heavy_check_mark: `B` [Least Common Multiple](src/algorithms/math/least-common-multiple) (LCM)
+  - :heavy_check_mark: `B` [Sieve of Eratosthenes](src/algorithms/math/sieve-of-eratosthenes) - finding all prime numbers up to any given limit
+  - :heavy_check_mark: `B` [Is Power of Two](src/algorithms/math/is-power-of-two) - check if the number is power of two (naive and bitwise algorithms)
+  - :heavy_check_mark: `B` [Pascal's Triangle](src/algorithms/math/pascal-triangle)
+  - :heavy_check_mark: `B` [Complex Number](src/algorithms/math/complex-number) - complex numbers and basic operations with them
+  - :heavy_check_mark: `B` [Radian & Degree](src/algorithms/math/radian) - radians to degree and backwards conversion
+  - :heavy_check_mark: `B` [Fast Powering](src/algorithms/math/fast-powering)
+  - :heavy_check_mark: `B` [Horner's method](src/algorithms/math/horner-method) - polynomial evaluation
+  - :heavy_check_mark: `B` [Matrices](src/algorithms/math/matrix) - matrices and basic matrix operations (multiplication, transposition, etc.)
+  - :heavy_check_mark: `B` [Euclidean Distance](src/algorithms/math/euclidean-distance) - distance between two points/vectors/matrices
+  - :x: `A` [Integer Partition](src/algorithms/math/integer-partition)
+  - :x: `A` [Square Root](src/algorithms/math/square-root) - Newton's method
+  - :x: `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
+  - :x: `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
 - **Sets**
-  :heavy_check_mark: `B` [Cartesian Product](src/algorithms/sets/cartesian-product) - product of multiple sets
-  :heavy_check_mark: `B` [Fisher–Yates Shuffle](src/algorithms/sets/fisher-yates) - random permutation of a finite sequence
-  :heavy_check_mark: `A` [Power Set](src/algorithms/sets/power-set) - all subsets of a set (bitwise and backtracking solutions)
-  :heavy_check_mark: `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
-  :heavy_check_mark: `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
-  :x: `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
-  :x: `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
-  :x: `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
-  :heavy_check_mark: `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - "0/1" and "Unbound" ones
-  :x: `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - "Brute Force" and "Dynamic Programming" (Kadane's) versions
-  :x: `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
+  - :heavy_check_mark: `B` [Cartesian Product](src/algorithms/sets/cartesian-product) - product of multiple sets
+  - :heavy_check_mark: `B` [Fisher–Yates Shuffle](src/algorithms/sets/fisher-yates) - random permutation of a finite sequence
+  - :heavy_check_mark: `A` [Power Set](src/algorithms/sets/power-set) - all subsets of a set (bitwise and backtracking solutions)
+  - :heavy_check_mark: `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
+  - :heavy_check_mark: `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
+  - :x: `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
+  - :x: `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
+  - :x: `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
+  - :heavy_check_mark: `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - "0/1" and "Unbound" ones
+  - :x: `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - "Brute Force" and "Dynamic Programming" (Kadane's) versions
+  - :x: `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
 - **Strings**
-  :heavy_check_mark: `B` [Hamming Distance](src/algorithms/string/hamming-distance) - number of positions at which the symbols are different
-  :heavy_check_mark: `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
-  :heavy_check_mark: `A` [Knuth–Morris–Pratt Algorithm](src/algorithms/string/knuth-morris-pratt) (KMP Algorithm) - substring search (pattern matching)
-  :heavy_check_mark: `A` [Z Algorithm](src/algorithms/string/z-algorithm) - substring search (pattern matching)
-  :heavy_check_mark: `A` [Rabin Karp Algorithm](src/algorithms/string/rabin-karp) - substring search
-  :x: `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
-  :x: `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
+  - :heavy_check_mark: `B` [Hamming Distance](src/algorithms/string/hamming-distance) - number of positions at which the symbols are different
+  - :heavy_check_mark: `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
+  - :heavy_check_mark: `A` [Knuth–Morris–Pratt Algorithm](src/algorithms/string/knuth-morris-pratt) (KMP Algorithm) - substring search (pattern matching)
+  - :heavy_check_mark: `A` [Z Algorithm](src/algorithms/string/z-algorithm) - substring search (pattern matching)
+  - :heavy_check_mark: `A` [Rabin Karp Algorithm](src/algorithms/string/rabin-karp) - substring search
+  - :x: `A` [Longest Common Substring](src/algorithms/string/longest-common-substring)
+  - :x: `A` [Regular Expression Matching](src/algorithms/string/regular-expression-matching)
 - **Searches**
-  :heavy_check_mark: `B` [Linear Search](src/algorithms/search/linear-search)
-  :heavy_check_mark: `B` [Jump Search](src/algorithms/search/jump-search) (or Block Search) - search in sorted array
-  :heavy_check_mark: `B` [Binary Search](src/algorithms/search/binary-search) - search in sorted array
-  :heavy_check_mark: `B` [Interpolation Search](src/algorithms/search/interpolation-search) - search in uniformly distributed sorted array
+  - :heavy_check_mark: `B` [Linear Search](src/algorithms/search/linear-search)
+  - :heavy_check_mark: `B` [Jump Search](src/algorithms/search/jump-search) (or Block Search) - search in sorted array
+  - :heavy_check_mark: `B` [Binary Search](src/algorithms/search/binary-search) - search in sorted array
+  - :heavy_check_mark: `B` [Interpolation Search](src/algorithms/search/interpolation-search) - search in uniformly distributed sorted array
 - **Sorting**
-  :heavy_check_mark: `B` [Bubble Sort](src/algorithms/sorting/bubble-sort)
-  :heavy_check_mark: `B` [Selection Sort](src/algorithms/sorting/selection-sort)
-  :heavy_check_mark: `B` [Insertion Sort](src/algorithms/sorting/insertion-sort)
-  :heavy_check_mark: `B` [Heap Sort](src/algorithms/sorting/heap-sort)
-  :heavy_check_mark: `B` [Merge Sort](src/algorithms/sorting/merge-sort)
-  :heavy_check_mark: `B` [Quicksort](src/algorithms/sorting/quick-sort) - in-place and non-in-place implementations
-  :heavy_check_mark: `B` [Shellsort](src/algorithms/sorting/shell-sort)
-  :heavy_check_mark: `B` [Counting Sort](src/algorithms/sorting/counting-sort)
-  :heavy_check_mark: `B` [Radix Sort](src/algorithms/sorting/radix-sort)
+  - :heavy_check_mark: `B` [Bubble Sort](src/algorithms/sorting/bubble-sort)
+  - :heavy_check_mark: `B` [Selection Sort](src/algorithms/sorting/selection-sort)
+  - :heavy_check_mark: `B` [Insertion Sort](src/algorithms/sorting/insertion-sort)
+  - :heavy_check_mark: `B` [Heap Sort](src/algorithms/sorting/heap-sort)
+  - :heavy_check_mark: `B` [Merge Sort](src/algorithms/sorting/merge-sort)
+  - :heavy_check_mark: `B` [Quicksort](src/algorithms/sorting/quick-sort) - in-place and non-in-place implementations
+  - :heavy_check_mark: `B` [Shellsort](src/algorithms/sorting/shell-sort)
+  - :heavy_check_mark: `B` [Counting Sort](src/algorithms/sorting/counting-sort)
+  - :heavy_check_mark: `B` [Radix Sort](src/algorithms/sorting/radix-sort)
 - **Linked Lists**
-  :heavy_check_mark: `B` [Straight Traversal](src/algorithms/linked-list/traversal)
-  :heavy_check_mark: `B` [Reverse Traversal](src/algorithms/linked-list/reverse-traversal)
+  - :heavy_check_mark: `B` [Straight Traversal](src/algorithms/linked-list/traversal)
+  - :heavy_check_mark: `B` [Reverse Traversal](src/algorithms/linked-list/reverse-traversal)
 - **Trees**
-  :heavy_check_mark: `B` [Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
-  :heavy_check_mark: `B` [Breadth-First Search](src/algorithms/tree/breadth-first-search) (BFS)
+  - :heavy_check_mark: `B` [Depth-First Search](src/algorithms/tree/depth-first-search) (DFS)
+  - :heavy_check_mark: `B` [Breadth-First Search](src/algorithms/tree/breadth-first-search) (BFS)
 - **Graphs**
-  :heavy_check_mark: `B` [Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
-  :heavy_check_mark: `B` [Breadth-First Search](src/algorithms/graph/breadth-first-search) (BFS)
-  :x: `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  :x: `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
-  :x: `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest paths to all graph vertices from single vertex
-  :x: `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
-  :x: `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
-  :x: `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  :x: `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
-  :x: `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan's algorithm (DFS based)
-  :x: `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
-  :x: `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury's algorithm - Visit every edge exactly once
-  :x: `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
-  :x: `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju's algorithm
-  :x: `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
+  - :heavy_check_mark: `B` [Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
+  - :heavy_check_mark: `B` [Breadth-First Search](src/algorithms/graph/breadth-first-search) (BFS)
+  - :x: `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  - :x: `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
+  - :x: `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest paths to all graph vertices from single vertex
+  - :x: `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
+  - :x: `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
+  - :x: `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  - :x: `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
+  - :x: `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan's algorithm (DFS based)
+  - :x: `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
+  - :x: `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury's algorithm - Visit every edge exactly once
+  - :x: `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
+  - :x: `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju's algorithm
+  - :x: `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
 - **Cryptography**
-  :heavy_check_mark: `B` [Polynomial Hash](src/algorithms/cryptography/polynomial-hash) - rolling hash function based on polynomial
-  :heavy_check_mark: `B` [Rail Fence Cipher](src/algorithms/cryptography/rail-fence-cipher) - a transposition cipher algorithm for encoding messages
-  :heavy_check_mark: `B` [Caesar Cipher](src/algorithms/cryptography/caesar-cipher) - simple substitution cipher
-  :heavy_check_mark: `B` [Hill Cipher](src/algorithms/cryptography/hill-cipher) - substitution cipher based on linear algebra
+  - :heavy_check_mark: `B` [Polynomial Hash](src/algorithms/cryptography/polynomial-hash) - rolling hash function based on polynomial
+  - :heavy_check_mark: `B` [Rail Fence Cipher](src/algorithms/cryptography/rail-fence-cipher) - a transposition cipher algorithm for encoding messages
+  - :heavy_check_mark: `B` [Caesar Cipher](src/algorithms/cryptography/caesar-cipher) - simple substitution cipher
+  - :heavy_check_mark: `B` [Hill Cipher](src/algorithms/cryptography/hill-cipher) - substitution cipher based on linear algebra
 - **Machine Learning**
-  :x: `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
-  :x: `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
-  :x: `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
+  - :x: `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
+  - :x: `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
+  - :x: `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
 - **Uncategorized**
-  :heavy_check_mark: `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
-  :heavy_check_mark: `B` [Square Matrix Rotation](src/algorithms/uncategorized/square-matrix-rotation) - in-place algorithm
-  :heavy_check_mark: `B` [Jump Game](src/algorithms/uncategorized/jump-game) - backtracking, dynamic programming (top-down + bottom-up) and greedy examples
-  :heavy_check_mark: `B` [Unique Paths](src/algorithms/uncategorized/unique-paths) - backtracking, dynamic programming and Pascal's Triangle based examples
-  :heavy_check_mark: `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem (dynamic programming and brute force versions)
-  :heavy_check_mark: `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach to the top (4 solutions)
-  :heavy_check_mark: `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
-  :heavy_check_mark: `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
-  :heavy_check_mark: `A` [Knight's Tour](src/algorithms/uncategorized/knight-tour)
+  - :heavy_check_mark: `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
+  - :heavy_check_mark: `B` [Square Matrix Rotation](src/algorithms/uncategorized/square-matrix-rotation) - in-place algorithm
+  - :heavy_check_mark: `B` [Jump Game](src/algorithms/uncategorized/jump-game) - backtracking, dynamic programming (top-down + bottom-up) and greedy examples
+  - :heavy_check_mark: `B` [Unique Paths](src/algorithms/uncategorized/unique-paths) - backtracking, dynamic programming and Pascal's Triangle based examples
+  - :heavy_check_mark: `B` [Rain Terraces](src/algorithms/uncategorized/rain-terraces) - trapping rain water problem (dynamic programming and brute force versions)
+  - :heavy_check_mark: `B` [Recursive Staircase](src/algorithms/uncategorized/recursive-staircase) - count the number of ways to reach to the top (4 solutions)
+  - :heavy_check_mark: `B` [Best Time To Buy Sell Stocks](src/algorithms/uncategorized/best-time-to-buy-sell-stocks) - divide and conquer and one-pass examples
+  - :heavy_check_mark: `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
+  - :heavy_check_mark: `A` [Knight's Tour](src/algorithms/uncategorized/knight-tour)
 
 ### Algorithms by Paradigm
 
