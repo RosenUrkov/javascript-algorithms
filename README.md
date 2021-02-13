@@ -45,7 +45,7 @@ the data.
 :heavy_check_mark: `B` [Hash Table](src/data-structures/hash-table)
 :heavy_check_mark: `B` [Heap](src/data-structures/heap) - max and min heap versions
 :heavy_check_mark: `B` [Priority Queue](src/data-structures/priority-queue)
-:x: `A` [Trie](src/data-structures/trie)
+:heavy_check_mark: `A` [Trie](src/data-structures/trie)
 :heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
 :x: `A` [AVL Tree](src/data-structures/tree/avl-tree)
 :x: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
@@ -65,7 +65,7 @@ a set of rules that precisely define a sequence of operations.
 ### Algorithms by Topic
 
 - **Math**
-  :x: `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
+  :heavy_check_mark: `B` [Bit Manipulation](src/algorithms/math/bits) - set/get/update/clear bits, multiplication/division by two, make negative etc.
   :heavy_check_mark: `B` [Factorial](src/algorithms/math/factorial)
   :heavy_check_mark: `B` [Fibonacci Number](src/algorithms/math/fibonacci) - classic and closed-form versions
   :heavy_check_mark: `B` [Prime Factors](src/algorithms/math/prime-factors) - finding prime factors and counting them using Hardy-Ramanujan's theorem
