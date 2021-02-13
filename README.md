@@ -53,7 +53,7 @@ the data.
 - :x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
 - :heavy_check_mark: `A` [Graph](src/data-structures/graph) (both directed and undirected)
 - :heavy_check_mark: `A` [Disjoint Set](src/data-structures/disjoint-set)
-- :x: `A` [Bloom Filter](src/data-structures/bloom-filter)
+- :heavy_check_mark: `A` [Bloom Filter](src/data-structures/bloom-filter)
 
 ## Algorithms
 
