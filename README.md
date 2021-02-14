@@ -47,7 +47,7 @@ the data.
 - :heavy_check_mark: `B` [Priority Queue](src/data-structures/priority-queue)
 - :heavy_check_mark: `A` [Trie](src/data-structures/trie)
 - :heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
-- :x: `A` [AVL Tree](src/data-structures/tree/avl-tree)
+- :heavy_check_mark: `A` [AVL Tree](src/data-structures/tree/avl-tree)
 - :x: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
 - :x: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
 - :x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
@@ -148,9 +148,9 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `B` [Caesar Cipher](src/algorithms/cryptography/caesar-cipher) - simple substitution cipher
   - :heavy_check_mark: `B` [Hill Cipher](src/algorithms/cryptography/hill-cipher) - substitution cipher based on linear algebra
 - **Machine Learning**
-  - :x: `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
-  - :x: `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
-  - :x: `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
+  - :heavy_check_mark: `B` [NanoNeuron](https://github.com/trekhleb/nano-neuron) - 7 simple JS functions that illustrate how machines can actually learn (forward/backward propagation)
+  - :heavy_check_mark: `B` [k-NN](src/algorithms/ml/knn) - k-nearest neighbors classification algorithm
+  - :heavy_check_mark: `B` [k-Means](src/algorithms/ml/k-means) - k-Means clustering algorithm
 - **Uncategorized**
   - :heavy_check_mark: `B` [Tower of Hanoi](src/algorithms/uncategorized/hanoi-tower)
   - :heavy_check_mark: `B` [Square Matrix Rotation](src/algorithms/uncategorized/square-matrix-rotation) - in-place algorithm
