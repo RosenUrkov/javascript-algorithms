@@ -43,48 +43,8 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       return null;
     }
 
-    if (node.left === null && node.right === null) {
-      replaceChild(node.parent, node, null);
-
-      if (node === head) {
-        head = null;
-      }
-    } else if (node.left === null) {
-      replaceChild(node.parent, node, node.right);
-
-      if (node === head) {
-        head = node.right;
-      }
-    } else if (node.right === null) {
-      replaceChild(node.parent, node, node.left);
-
-      if (node === head) {
-        head = node.left;
-      }
-    } else {
-      const replacement = node.right;
-      const rightMostOfTheSmall = getRightMostNode(node.left);
-
-      rightMostOfTheSmall.right = replacement.left;
-      if (replacement.left) {
-        replacement.left.parent = rightMostOfTheSmall;
-      }
-
-      replacement.left = node.left;
-      node.left.parent = replacement;
-
-      replaceChild(node.parent, node, replacement);
-
-      if (node === head) {
-        head = replacement;
-      }
-    }
-
-    node.right = null;
-    node.left = null;
-    node.parent = null;
-
-    return node;
+    head = removeNode(node);
+    return newNode;
   };
 
   const contains = (element) => {
@@ -132,6 +92,52 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     return updateHeightAndBalance(newNode);
   };
 
+  const removeNode = (node) => {
+    if (node.left === null && node.right === null) {
+      replaceChild(node.parent, node, null);
+
+      if (node === head) {
+        return null;
+      }
+
+      return updateHeightAndBalance(node.parent);
+    }
+
+    if (node.left === null) {
+      replaceChild(node.parent, node, node.right);
+
+      if (node === head) {
+        return node.right;
+      }
+
+      return updateHeightAndBalance(node.parent);
+    }
+
+    if (node.right === null) {
+      replaceChild(node.parent, node, node.left);
+
+      if (node === head) {
+        return node.left;
+      }
+
+      return updateHeightAndBalance(node.parent);
+    }
+
+    const replacement = node.right;
+    const rightMostSmall = getRightMostNode(node.left);
+
+    rightMostSmall.right = replacement.left;
+    if (replacement.left) {
+      replacement.left.parent = rightMostSmall;
+    }
+
+    replacement.left = node.left;
+    node.left.parent = replacement;
+
+    replaceChild(node.parent, node, replacement);
+    return updateHeightAndBalance(rightMostSmall);
+  };
+
   const updateHeightAndBalance = (node) => {
     node.leftHeight = node.left
       ? Math.max(node.left.leftHeight, node.left.rightHeight) + 1
@@ -147,8 +153,8 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
         const rotationNode = node.right;
         const swapNode = rotationNode.left;
 
-        node.right = swapNode;
-        swapNode.parent = rotationNode.parent;
+        replaceChild(node, rotationNode, swapNode);
+
         rotationNode.parent = swapNode;
         rotationNode.left = swapNode.right;
         swapNode.right = rotationNode;
@@ -159,13 +165,15 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       // left outer rotation
       const rotationNode = node.right;
 
-      if (node.parent?.left === node) node.parent.left = rotationNode;
-      if (node.parent?.right === node) node.parent.right = rotationNode;
+      replaceChild(node.parent, node, rotationNode);
 
-      rotationNode.parent = node.parent;
-      node.parent = rotationNode;
       node.right = rotationNode.left;
+      if (rotationNode.left) {
+        rotationNode.left.parent = node;
+      }
+
       rotationNode.left = node;
+      node.parent = rotationNode;
 
       return updateHeightAndBalance(node);
     }
@@ -176,8 +184,8 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
         const rotationNode = node.left;
         const swapNode = rotationNode.right;
 
-        node.left = swapNode;
-        swapNode.parent = rotationNode.parent;
+        replaceChild(node, rotationNode, swapNode);
+
         rotationNode.parent = swapNode;
         rotationNode.right = swapNode.left;
         swapNode.left = rotationNode;
@@ -188,13 +196,15 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       // right outer rotation
       const rotationNode = node.left;
 
-      if (node.parent?.left === node) node.parent.left = rotationNode;
-      if (node.parent?.right === node) node.parent.right = rotationNode;
+      replaceChild(node.parent, node, rotationNode);
 
-      rotationNode.parent = node.parent;
-      node.parent = rotationNode;
       node.left = rotationNode.right;
+      if (rotationNode.right) {
+        rotationNode.right.parent = node;
+      }
+
       rotationNode.right = node;
+      node.parent = rotationNode;
 
       return updateHeightAndBalance(node);
     }
@@ -234,7 +244,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     return null;
   };
 
-  const getLeftMostNode = (tree) => {
+  const getLeftMostNode = (tree = head) => {
     if (tree.left === null) {
       return tree;
     }
@@ -242,7 +252,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     return getLeftMostNode(tree.left);
   };
 
-  const getRightMostNode = (tree) => {
+  const getRightMostNode = (tree = head) => {
     if (tree.right === null) {
       return tree;
     }
@@ -278,18 +288,3 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     toArray,
   };
 };
-
-const tree = createAVLTree();
-tree.add(5);
-tree.add(1);
-tree.add(6);
-tree.add(12);
-tree.add(9);
-console.log(tree.head);
-tree.add(18);
-tree.add(7);
-console.log(tree.head);
-tree.add(3);
-tree.add(2);
-tree.add(4);
-console.log(tree.head);
