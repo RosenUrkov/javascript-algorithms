@@ -91,9 +91,9 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `A` [Power Set](src/algorithms/sets/power-set) - all subsets of a set (bitwise and backtracking solutions)
   - :heavy_check_mark: `A` [Permutations](src/algorithms/sets/permutations) (with and without repetitions)
   - :heavy_check_mark: `A` [Combinations](src/algorithms/sets/combinations) (with and without repetitions)
-  - :x: `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
-  - :x: `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
-  - :x: `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
+  - :heavy_check_mark: `A` [Longest Common Subsequence](src/algorithms/sets/longest-common-subsequence) (LCS)
+  - :heavy_check_mark: `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
+  - :heavy_check_mark: `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
   - :heavy_check_mark: `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - "0/1" and "Unbound" ones
   - :x: `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - "Brute Force" and "Dynamic Programming" (Kadane's) versions
   - :x: `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
