@@ -3,31 +3,30 @@ const createTreeNode = (
   left = null,
   right = null,
   parent = null,
-  leftHeight = 0,
-  rightHeight = 0
+  color = 1
 ) => {
   return {
     value,
     left,
     right,
     parent,
-    leftHeight,
-    rightHeight,
+    color, // 0 = black, 1 = red
   };
 };
 
-export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
+export const createRedBlackTree = (compareFn = (x, y) => x.value - y.value) => {
   let head = null;
 
   const add = (element) => {
     const newNode = createTreeNode(element);
 
     if (head === null) {
+      newNode.color = 0;
       head = newNode;
       return head;
     }
 
-    head = insertNode(head, newNode);
+    const lastChanged = insertNode(head, newNode);
     return newNode;
   };
 
@@ -43,7 +42,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       return null;
     }
 
-    head = removeNode(node);
+    const lastChanged = removeNode(node);
     return newNode;
   };
 
@@ -71,7 +70,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       if (!tree.left) {
         tree.left = newNode;
         newNode.parent = tree;
-        return updateHeightAndBalance(newNode);
+        return updateColorAndBalance(newNode);
       }
 
       return insertNode(tree.left, newNode);
@@ -80,7 +79,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
       if (!tree.right) {
         tree.right = newNode;
         newNode.parent = tree;
-        return updateHeightAndBalance(newNode);
+        return updateColorAndBalance(newNode);
       }
 
       return insertNode(tree.right, newNode);
@@ -94,7 +93,8 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     tree.left = newNode;
     newNode.parent = tree;
 
-    return updateHeightAndBalance(newNode);
+    const updateNode = newNode.left?.color === 1 ? newNode.left : newNode;
+    return updateColorAndBalance(updateNode);
   };
 
   const removeNode = (node) => {
@@ -105,7 +105,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
         return null;
       }
 
-      return updateHeightAndBalance(node.parent);
+      return updateColorAndBalance(node.parent);
     }
 
     if (node.left === null) {
@@ -115,7 +115,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
         return node.right;
       }
 
-      return updateHeightAndBalance(node.parent);
+      return updateColorAndBalance(node.parent);
     }
 
     if (node.right === null) {
@@ -125,7 +125,7 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
         return node.left;
       }
 
-      return updateHeightAndBalance(node.parent);
+      return updateColorAndBalance(node.parent);
     }
 
     const replacement = node.right;
@@ -140,84 +140,114 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     node.left.parent = replacement;
 
     replaceChild(node.parent, node, replacement);
-    return updateHeightAndBalance(rightMostSmall);
+    return updateColorAndBalance(rightMostSmall);
   };
 
-  const updateHeightAndBalance = (node) => {
-    node.leftHeight = node.left
-      ? Math.max(node.left.leftHeight, node.left.rightHeight) + 1
-      : 0;
+  const updateColorAndBalance = (node) => {
+    // rule 1
+    if (node.parent.color === 0) {
+      return node;
+    }
 
-    node.rightHeight = node.right
-      ? Math.max(node.right.leftHeight, node.right.rightHeight) + 1
-      : 0;
+    const uncle =
+      node.parent.parent.left === node.parent
+        ? node.parent.parent.right
+        : node.parent.parent.left;
 
-    if (getNodeRotationIndex(node) < -1) {
-      if (getNodeRotationIndex(node.right) >= 1) {
+    // rule 2
+    if (uncle?.color === 1) {
+      node.parent.color = 0;
+      uncle.color = 0;
+
+      if (node.parent.parent === head) {
+        return node;
+      }
+
+      node.parent.parent.color = 1;
+      return updateColorAndBalance(node.parent.parent);
+    }
+
+    // rule 3
+    if (node.parent.parent.right === node.parent) {
+      if (node.parent.left === node) {
         // right inner rotation
-        const rotationNode = node.right;
-        const swapNode = rotationNode.left;
+        const rotationNode = node.parent;
 
-        replaceChild(node, rotationNode, swapNode);
+        replaceChild(rotationNode.parent, rotationNode, node);
 
-        rotationNode.parent = swapNode;
-        rotationNode.left = swapNode.right;
-        swapNode.right = rotationNode;
+        rotationNode.parent = node;
+        rotationNode.left = node.right;
+        node.right = rotationNode;
 
-        return updateHeightAndBalance(rotationNode);
+        return updateColorAndBalance(rotationNode);
       }
 
       // left outer rotation
-      const rotationNode = node.right;
+      const rotationNode = node.parent;
+      const father = node.parent.parent;
+      const grandFather = node.parent.parent.parent;
 
-      replaceChild(node.parent, node, rotationNode);
+      replaceChild(grandFather, father, rotationNode);
 
-      node.right = rotationNode.left;
+      father.right = rotationNode.left;
       if (rotationNode.left) {
-        rotationNode.left.parent = node;
+        rotationNode.left.parent = father;
       }
 
-      rotationNode.left = node;
-      node.parent = rotationNode;
+      rotationNode.left = father;
+      father.parent = rotationNode;
 
-      return updateHeightAndBalance(node);
+      rotationNode.color = 0;
+      father.color = 1;
+
+      if (father === head) {
+        head = rotationNode;
+      }
+
+      return rotationNode;
     }
 
-    if (getNodeRotationIndex(node) > 1) {
-      if (getNodeRotationIndex(node.left) <= -1) {
+    if (node.parent.parent.left === node.parent) {
+      if (node.parent.right === node) {
         // left inner rotation
-        const rotationNode = node.left;
-        const swapNode = rotationNode.right;
+        const rotationNode = node.parent;
 
-        replaceChild(node, rotationNode, swapNode);
+        replaceChild(rotationNode.parent, rotationNode, node);
 
-        rotationNode.parent = swapNode;
-        rotationNode.right = swapNode.left;
-        swapNode.left = rotationNode;
+        rotationNode.parent = node;
+        rotationNode.right = node.left;
+        node.left = rotationNode;
 
-        return updateHeightAndBalance(rotationNode);
+        return updateColorAndBalance(rotationNode);
       }
 
       // right outer rotation
-      const rotationNode = node.left;
+      const rotationNode = node.parent;
+      const father = node.parent.parent;
+      const grandFather = node.parent.parent.parent;
 
-      replaceChild(node.parent, node, rotationNode);
+      replaceChild(grandFather, father, rotationNode);
 
-      node.left = rotationNode.right;
+      father.left = rotationNode.right;
       if (rotationNode.right) {
-        rotationNode.right.parent = node;
+        rotationNode.right.parent = father;
       }
 
-      rotationNode.right = node;
-      node.parent = rotationNode;
+      rotationNode.right = father;
+      father.parent = rotationNode;
 
-      return updateHeightAndBalance(node);
+      rotationNode.color = 0;
+      father.color = 1;
+
+      if (father === head) {
+        head = rotationNode;
+      }
+
+      return rotationNode;
     }
 
-    return node.parent ? updateHeightAndBalance(node.parent) : node;
+    return node;
   };
-
-  const getNodeRotationIndex = (node) => node.leftHeight - node.rightHeight;
 
   const replaceChild = (parent, oldChild, newChild) => {
     if (parent?.left === oldChild) {
@@ -293,3 +323,19 @@ export const createAVLTree = (compareFn = (x, y) => x.value - y.value) => {
     toArray,
   };
 };
+
+const redBlackTree = createRedBlackTree();
+
+redBlackTree.add(7);
+redBlackTree.add(3);
+redBlackTree.add(9);
+redBlackTree.add(1);
+redBlackTree.add(2);
+redBlackTree.add(4);
+redBlackTree.add(7);
+redBlackTree.add(6);
+redBlackTree.add(10);
+redBlackTree.add(5);
+redBlackTree.add(8);
+
+console.log(redBlackTree.head);

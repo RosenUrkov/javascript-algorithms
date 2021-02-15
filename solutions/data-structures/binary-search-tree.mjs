@@ -119,6 +119,10 @@ export const createBinarySearchTree = (
     }
 
     newNode.left = tree.left;
+    if (tree.left) {
+      tree.left.parent = newNode;
+    }
+
     tree.left = newNode;
     newNode.parent = tree;
 
