@@ -95,8 +95,8 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `A` [Longest Increasing Subsequence](src/algorithms/sets/longest-increasing-subsequence)
   - :heavy_check_mark: `A` [Shortest Common Supersequence](src/algorithms/sets/shortest-common-supersequence) (SCS)
   - :heavy_check_mark: `A` [Knapsack Problem](src/algorithms/sets/knapsack-problem) - "0/1" and "Unbound" ones
-  - :x: `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - "Brute Force" and "Dynamic Programming" (Kadane's) versions
-  - :x: `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
+  - :heavy_check_mark: `A` [Maximum Subarray](src/algorithms/sets/maximum-subarray) - "Brute Force" and "Dynamic Programming" (Kadane's) versions
+  - :heavy_check_mark: `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
 - **Strings**
   - :heavy_check_mark: `B` [Hamming Distance](src/algorithms/string/hamming-distance) - number of positions at which the symbols are different
   - :heavy_check_mark: `A` [Levenshtein Distance](src/algorithms/string/levenshtein-distance) - minimum edit distance between two sequences
