@@ -98,49 +98,151 @@ export const createRedBlackTree = (compareFn = (x, y) => x.value - y.value) => {
   };
 
   const removeNode = (node) => {
-    if (node.left === null && node.right === null) {
-      replaceChild(node.parent, node, null);
+    // two children case
+    if (node.left !== null && node.right !== null) {
+      const rightMostSmall = getRightMostNode(node.left);
+      node.value = rightMostSmall.value;
+
+      return removeNode(rightMostSmall);
+    }
+
+    const child = node.left || node.right;
+
+    // red node case
+    if (node.color === 1) {
+      replaceChild(node.parent, node, child);
+      return node;
+    }
+
+    // black node case
+
+    // red child case
+    if (child && child.color === 1) {
+      child.color = 0;
+      replaceChild(node.parent, node, child);
 
       if (node === head) {
-        return null;
+        head = child;
       }
 
-      return updateColorAndBalance(node.parent);
+      return node;
     }
 
-    if (node.left === null) {
-      replaceChild(node.parent, node, node.right);
+    // black or no child case
+    resolveDoubleBlackNode(node);
 
-      if (node === head) {
-        return node.right;
+    replaceChild(node.parent, node, child);
+    if (node === head) {
+      head = child;
+    }
+
+    return node;
+  };
+
+  const resolveDoubleBlackNode = (node) => {
+    // case 1
+    if (node === head) {
+      return node;
+    }
+
+    const rightSibling = node.parent.left === node && node.parent.right;
+    const leftSibling = node.parent.right === node && node.parent.left;
+    const sibling = leftSibling || rightSibling;
+
+    // case 2
+    if (
+      node.parent.color === 0 &&
+      sibling.color === 1 &&
+      (!sibling.left || sibling.left.color === 0) &&
+      (!sibling.right || sibling.right.color === 0)
+    ) {
+      if (rightSibling) {
+        sibling.parent.color = 1;
+        sibling.color = 0;
+        leftLeftRotation(sibling, sibling.parent);
+
+        return resolveDoubleBlackNode(node);
       }
 
-      return updateColorAndBalance(node.parent);
+      if (leftSibling) {
+        sibling.parent.color = 1;
+        sibling.color = 0;
+        rightRightRotation(sibling, sibling.parent);
+
+        return resolveDoubleBlackNode(node);
+      }
     }
 
-    if (node.right === null) {
-      replaceChild(node.parent, node, node.left);
+    // case 3
+    if (
+      node.parent.color === 0 &&
+      sibling.color === 0 &&
+      (!sibling.left || sibling.left.color === 0) &&
+      (!sibling.right || sibling.right.color === 0)
+    ) {
+      sibling.color = 1;
+      return resolveDoubleBlackNode(node.parent);
+    }
 
-      if (node === head) {
-        return node.left;
+    // case 4
+    if (
+      node.parent.color === 1 &&
+      sibling.color === 0 &&
+      (!sibling.left || sibling.left.color === 0) &&
+      (!sibling.right || sibling.right.color === 0)
+    ) {
+      sibling.parent.color = 0;
+      sibling.color = 1;
+
+      return node;
+    }
+
+    // case 5
+    if (node.parent.color === 0 && sibling.color === 0) {
+      if (
+        rightSibling &&
+        ((sibling.left && sibling.left.color === 1) ||
+          (!sibling.right && sibling.right.color === 0))
+      ) {
+        sibling.color = 1;
+        sibling.left.color = 0;
+        rightRightRotation(sibling.left, sibling);
+
+        return resolveDoubleBlackNode(node);
       }
 
-      return updateColorAndBalance(node.parent);
+      if (
+        leftSibling &&
+        ((!sibling.left && sibling.left.color === 0) ||
+          (sibling.right && sibling.right.color === 1))
+      ) {
+        sibling.color = 1;
+        sibling.right.color = 0;
+        leftLeftRotation(sibling.right, sibling);
+
+        return resolveDoubleBlackNode(node);
+      }
     }
 
-    const replacement = node.right;
-    const rightMostSmall = getRightMostNode(node.left);
+    // case 6
+    if (sibling.color === 0 && sibling.right && sibling.right.color === 1) {
+      if (rightSibling && sibling.right && sibling.right.color === 1) {
+        sibling.color = node.parent.color;
+        sibling.parent.color = 0;
+        sibling.right.color = 0;
 
-    rightMostSmall.right = replacement.left;
-    if (replacement.left) {
-      replacement.left.parent = rightMostSmall;
+        leftLeftRotation(sibling, sibling.parent);
+        return node;
+      }
+      if (leftSibling && sibling.left && sibling.left.color === 1) {
+        sibling.color = node.parent.color;
+        sibling.parent.color = 0;
+        sibling.left.color = 0;
+
+        rightRightRotation(sibling, sibling.parent);
+        return node;
+      }
     }
-
-    replacement.left = node.left;
-    node.left.parent = replacement;
-
-    replaceChild(node.parent, node, replacement);
-    return updateColorAndBalance(rightMostSmall);
   };
 
   const updateColorAndBalance = (node) => {
@@ -183,28 +285,10 @@ export const createRedBlackTree = (compareFn = (x, y) => x.value - y.value) => {
       }
 
       // left outer rotation
-      const rotationNode = node.parent;
-      const father = node.parent.parent;
-      const grandFather = node.parent.parent.parent;
+      node.parent.color = 0;
+      node.parent.parent.color = 1;
 
-      replaceChild(grandFather, father, rotationNode);
-
-      father.right = rotationNode.left;
-      if (rotationNode.left) {
-        rotationNode.left.parent = father;
-      }
-
-      rotationNode.left = father;
-      father.parent = rotationNode;
-
-      rotationNode.color = 0;
-      father.color = 1;
-
-      if (father === head) {
-        head = rotationNode;
-      }
-
-      return rotationNode;
+      return leftLeftRotation(node.parent, node.parent.parent);
     }
 
     if (node.parent.parent.left === node.parent) {
@@ -222,31 +306,57 @@ export const createRedBlackTree = (compareFn = (x, y) => x.value - y.value) => {
       }
 
       // right outer rotation
-      const rotationNode = node.parent;
-      const father = node.parent.parent;
-      const grandFather = node.parent.parent.parent;
+      node.parent.color = 0;
+      node.parent.parent.color = 1;
 
-      replaceChild(grandFather, father, rotationNode);
-
-      father.left = rotationNode.right;
-      if (rotationNode.right) {
-        rotationNode.right.parent = father;
-      }
-
-      rotationNode.right = father;
-      father.parent = rotationNode;
-
-      rotationNode.color = 0;
-      father.color = 1;
-
-      if (father === head) {
-        head = rotationNode;
-      }
-
-      return rotationNode;
+      return rightRightRotation(node.parent, node.parent.parent);
     }
 
     return node;
+  };
+
+  const leftLeftRotation = (middleNode, upperNode) => {
+    const rotationNode = middleNode;
+    const father = upperNode;
+    const grandFather = upperNode.parent;
+
+    replaceChild(grandFather, father, rotationNode);
+
+    father.right = rotationNode.left;
+    if (rotationNode.left) {
+      rotationNode.left.parent = father;
+    }
+
+    rotationNode.left = father;
+    father.parent = rotationNode;
+
+    if (father === head) {
+      head = rotationNode;
+    }
+
+    return rotationNode;
+  };
+
+  const rightRightRotation = (middleNode, upperNode) => {
+    const rotationNode = middleNode;
+    const father = upperNode;
+    const grandFather = upperNode.parent;
+
+    replaceChild(grandFather, father, rotationNode);
+
+    father.left = rotationNode.right;
+    if (rotationNode.right) {
+      rotationNode.right.parent = father;
+    }
+
+    rotationNode.right = father;
+    father.parent = rotationNode;
+
+    if (father === head) {
+      head = rotationNode;
+    }
+
+    return rotationNode;
   };
 
   const replaceChild = (parent, oldChild, newChild) => {
@@ -323,19 +433,3 @@ export const createRedBlackTree = (compareFn = (x, y) => x.value - y.value) => {
     toArray,
   };
 };
-
-const redBlackTree = createRedBlackTree();
-
-redBlackTree.add(7);
-redBlackTree.add(3);
-redBlackTree.add(9);
-redBlackTree.add(1);
-redBlackTree.add(2);
-redBlackTree.add(4);
-redBlackTree.add(7);
-redBlackTree.add(6);
-redBlackTree.add(10);
-redBlackTree.add(5);
-redBlackTree.add(8);
-
-console.log(redBlackTree.head);

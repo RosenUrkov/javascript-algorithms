@@ -159,7 +159,7 @@ export const createBinarySearchTree = (
     return null;
   };
 
-  const getLeftMostNode = (tree) => {
+  const getLeftMostNode = (tree = head) => {
     if (tree.left === null) {
       return tree;
     }
@@ -167,7 +167,7 @@ export const createBinarySearchTree = (
     return getLeftMostNode(tree.left);
   };
 
-  const getRightMostNode = (tree) => {
+  const getRightMostNode = (tree = head) => {
     if (tree.right === null) {
       return tree;
     }

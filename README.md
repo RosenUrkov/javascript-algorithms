@@ -48,7 +48,7 @@ the data.
 - :heavy_check_mark: `A` [Trie](src/data-structures/trie)
 - :heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
 - :heavy_check_mark: `A` [AVL Tree](src/data-structures/tree/avl-tree)
-- :x: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
+- :heavy_check_mark: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
 - :x: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
 - :x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
 - :heavy_check_mark: `A` [Graph](src/data-structures/graph) (both directed and undirected)
