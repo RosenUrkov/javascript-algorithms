@@ -49,8 +49,8 @@ the data.
 - :heavy_check_mark: `A` [Binary Search Tree](src/data-structures/tree/binary-search-tree)
 - :heavy_check_mark: `A` [AVL Tree](src/data-structures/tree/avl-tree)
 - :heavy_check_mark: `A` [Red-Black Tree](src/data-structures/tree/red-black-tree)
-- :x: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
-- :x: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
+- :heavy_check_mark: `A` [Segment Tree](src/data-structures/tree/segment-tree) - with min/max/sum range queries examples
+- :heavy_check_mark: `A` [Fenwick Tree](src/data-structures/tree/fenwick-tree) (Binary Indexed Tree)
 - :heavy_check_mark: `A` [Graph](src/data-structures/graph) (both directed and undirected)
 - :heavy_check_mark: `A` [Disjoint Set](src/data-structures/disjoint-set)
 - :heavy_check_mark: `A` [Bloom Filter](src/data-structures/bloom-filter)
@@ -81,10 +81,10 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `B` [Horner's method](src/algorithms/math/horner-method) - polynomial evaluation
   - :heavy_check_mark: `B` [Matrices](src/algorithms/math/matrix) - matrices and basic matrix operations (multiplication, transposition, etc.)
   - :heavy_check_mark: `B` [Euclidean Distance](src/algorithms/math/euclidean-distance) - distance between two points/vectors/matrices
-  - :x: `A` [Integer Partition](src/algorithms/math/integer-partition)
-  - :x: `A` [Square Root](src/algorithms/math/square-root) - Newton's method
-  - :x: `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
-  - :x: `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
+  - :heavy_check_mark: `A` [Integer Partition](src/algorithms/math/integer-partition)
+  - :heavy_check_mark: `A` [Square Root](src/algorithms/math/square-root) - Newton's method
+  - :heavy_check_mark: `A` [Liu Hui π Algorithm](src/algorithms/math/liu-hui) - approximate π calculations based on N-gons
+  - :heavy_check_mark: `A` [Discrete Fourier Transform](src/algorithms/math/fourier-transform) - decompose a function of time (a signal) into the frequencies that make it up
 - **Sets**
   - :heavy_check_mark: `B` [Cartesian Product](src/algorithms/sets/cartesian-product) - product of multiple sets
   - :heavy_check_mark: `B` [Fisher–Yates Shuffle](src/algorithms/sets/fisher-yates) - random permutation of a finite sequence
