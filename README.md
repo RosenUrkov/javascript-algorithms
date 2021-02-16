@@ -129,12 +129,12 @@ a set of rules that precisely define a sequence of operations.
 - **Graphs**
   - :heavy_check_mark: `B` [Depth-First Search](src/algorithms/graph/depth-first-search) (DFS)
   - :heavy_check_mark: `B` [Breadth-First Search](src/algorithms/graph/breadth-first-search) (BFS)
-  - :x: `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  - :x: `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
+  - :heavy_check_mark: `B` [Kruskal’s Algorithm](src/algorithms/graph/kruskal) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  - :heavy_check_mark: `A` [Dijkstra Algorithm](src/algorithms/graph/dijkstra) - finding the shortest paths to all graph vertices from single vertex
   - :x: `A` [Bellman-Ford Algorithm](src/algorithms/graph/bellman-ford) - finding the shortest paths to all graph vertices from single vertex
   - :x: `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
   - :x: `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
-  - :x: `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
+  - :heavy_check_mark: `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
   - :x: `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
   - :x: `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan's algorithm (DFS based)
   - :x: `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
