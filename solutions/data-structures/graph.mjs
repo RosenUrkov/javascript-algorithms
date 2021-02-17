@@ -23,7 +23,6 @@ export const graph = (() => {
 
     return edgesList.reduce((list, [from, to, weight]) => {
       list[from].append([to, weight]);
-      list[to].append([from, weight]);
 
       return list;
     }, adjList);
