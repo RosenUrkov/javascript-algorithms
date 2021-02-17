@@ -135,13 +135,13 @@ a set of rules that precisely define a sequence of operations.
   - :heavy_check_mark: `A` [Floyd-Warshall Algorithm](src/algorithms/graph/floyd-warshall) - find the shortest paths between all pairs of vertices
   - :heavy_check_mark: `A` [Detect Cycle](src/algorithms/graph/detect-cycle) - for both directed and undirected graphs (DFS and Disjoint Set based versions)
   - :heavy_check_mark: `A` [Prim’s Algorithm](src/algorithms/graph/prim) - finding Minimum Spanning Tree (MST) for weighted undirected graph
-  - :x: `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
-  - :x: `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan's algorithm (DFS based)
-  - :x: `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
-  - :x: `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury's algorithm - Visit every edge exactly once
-  - :x: `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
-  - :x: `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju's algorithm
-  - :x: `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
+  - :heavy_check_mark: `A` [Topological Sorting](src/algorithms/graph/topological-sorting) - DFS method
+  - :heavy_check_mark: `A` [Articulation Points](src/algorithms/graph/articulation-points) - Tarjan's algorithm (DFS based)
+  - :heavy_check_mark: `A` [Bridges](src/algorithms/graph/bridges) - DFS based algorithm
+  - :heavy_check_mark: `A` [Eulerian Path and Eulerian Circuit](src/algorithms/graph/eulerian-path) - Fleury's algorithm - Visit every edge exactly once
+  - :heavy_check_mark: `A` [Hamiltonian Cycle](src/algorithms/graph/hamiltonian-cycle) - Visit every vertex exactly once
+  - :heavy_check_mark: `A` [Strongly Connected Components](src/algorithms/graph/strongly-connected-components) - Kosaraju's algorithm
+  - :heavy_check_mark: `A` [Travelling Salesman Problem](src/algorithms/graph/travelling-salesman) - shortest possible route that visits each city and returns to the origin city
 - **Cryptography**
   - :heavy_check_mark: `B` [Polynomial Hash](src/algorithms/cryptography/polynomial-hash) - rolling hash function based on polynomial
   - :heavy_check_mark: `B` [Rail Fence Cipher](src/algorithms/cryptography/rail-fence-cipher) - a transposition cipher algorithm for encoding messages

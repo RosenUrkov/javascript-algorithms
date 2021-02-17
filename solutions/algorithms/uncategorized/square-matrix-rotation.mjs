@@ -10,5 +10,3 @@ const input = [
   [13, 3, 6, 7],
   [15, 14, 12, 16],
 ];
-
-console.log(squareMatrixRotation(input));

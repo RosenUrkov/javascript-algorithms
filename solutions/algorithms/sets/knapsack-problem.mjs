@@ -29,5 +29,3 @@ const items = [
   { value: 8, weight: 6 },
   { value: 2, weight: 3 },
 ];
-
-console.log(knapsackProblem(items, 15));

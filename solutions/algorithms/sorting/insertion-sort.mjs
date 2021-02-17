@@ -15,5 +15,3 @@ export const insertionSort = (array) => {
 
   return result;
 };
-
-console.log(insertionSort([4, 2, 3, 1, -1, 0, 8, 5, 19, -2]));

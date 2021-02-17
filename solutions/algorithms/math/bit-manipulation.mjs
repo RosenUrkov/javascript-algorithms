@@ -36,7 +36,6 @@ export const bitManipulations = (() => {
   };
 
   const multiplyTwoSignedNumbers = (num1, num2) => {
-    console.log(num2);
     if (num1 === 0 || num2 === 0) {
       return 0;
     }
@@ -144,5 +143,3 @@ export const bitManipulations = (() => {
     fullAdder,
   };
 })();
-
-console.log(bitManipulations.fullAdder(3, 5));

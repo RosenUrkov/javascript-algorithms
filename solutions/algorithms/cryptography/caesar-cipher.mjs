@@ -16,5 +16,3 @@ export const caesarCipher = (string) => {
     })
     .join("");
 };
-
-console.log(caesarCipher("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"));

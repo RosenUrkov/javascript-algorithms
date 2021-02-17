@@ -27,5 +27,3 @@ export const liuHuiPiAlgorithm = (splitCount = 1) => {
 
   return approximateCircleArea / circleRadius ** 2;
 };
-
-console.log(liuHuiPiAlgorithm(5));

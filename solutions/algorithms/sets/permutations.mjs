@@ -44,5 +44,3 @@ export const permutationsWithoutRepetition = (number) => {
 
   return permutationsRecursive(number);
 };
-
-console.log(permutationsWithoutRepetition(3));
